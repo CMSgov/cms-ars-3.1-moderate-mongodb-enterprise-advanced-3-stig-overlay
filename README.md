@@ -13,43 +13,30 @@ The latest versions and installation options are available at the [InSpec](http:
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
 ```
-mongod_conf
-    description: 'MongoDB configuration file'
-    type: 'string'
-    default: '/etc/mongod.conf'
+# description: 'MongoDB configuration file'
+mongod_conf: '/etc/mongod.conf'
 
-  - name: mongodb_packages_used
-    description: 'List of mongodb packages used'
-    type: array
-    default: ['mongodb-org-tools-4.0.5-1.el7.x86_64',
+# description: 'List of mongodb packages used'
+mongodb_packages_used: ['mongodb-org-tools-4.0.5-1.el7.x86_64',
               'mongodb-org-server-4.0.5-1.el7.x86_64',
               'mongodb-org-shell-4.0.5-1.el7.x86_64',
               'mongodb-org-4.0.5-1.el7.x86_64',
               'mongodb-org-mongos-4.0.5-1.el7.x86_64']
-  - name: user
-    description: 'User to log into the mongo database'
-    type: string
-    default: 'mongoadmin'
+  
+# description: 'User to log into the mongo database'
+user: 'mongoadmin'
 
-  - name: password
-    description: 'password to log into the mongo database'
-    type: string
-    default: 'mongoadmin'
+# description: 'password to log into the mongo database'
+password: 'mongoadmin'
 
-  - name: admin_db_users
-    description: 'List of authorized users of the admn database'
-    type: array
-    default: ["mongodb_admin"]
+# description: 'List of authorized users of the admn database'
+admin_db_users: ["mongodb_admin"]
 
-  - name: config_db_users
-    description: 'List of authorized users of the admn database'
-    type: array
-    default: ["config_admin"]
+# description: 'List of authorized users of the admn database'
+config_db_users: ["config_admin"]
 
-  - name: myUserAdmin_allowed_role
-    description: 'List of authorized users of the admn database'
-    type: array
-    default: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
+# description: 'List of authorized users of the admn database'
+myUserAdmin_allowed_role: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
 
 
   - name: mongoadmin_allowed_role
