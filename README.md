@@ -1,0 +1,1 @@
+# mongodb-enterprise-advanced-3-stig-overlay
