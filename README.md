@@ -1,4 +1,4 @@
-# mongodb-enterprise-advanced-3-stig-overlay
+# cms-ars-3.1-moderate-mongodb-enterprise-advanced-3-stig-overlay
 
 InSpec profile overlay to validate the secure configuration of MongoDB Enterprise Advanced 3 against [DISA's](https://iase.disa.mil/stigs/Pages/index.aspx) MongoDB Enterprise Advanced 3 STIG Version 1 Release 1 tailored for [CMS ARS 3.1](https://www.cms.gov/Research-Statistics-Data-and-Systems/CMS-Information-Technology/InformationSecurity/Info-Security-Library-Items/ARS-31-Publication.html) for CMS systems categories as Moderate.
 
