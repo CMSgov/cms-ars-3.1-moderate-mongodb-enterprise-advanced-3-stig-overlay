@@ -13,68 +13,60 @@ The latest versions and installation options are available at the [InSpec](http:
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
 ```
-# description: 'username Oracle DB'
-user: 'system'
+mongod_conf
+    description: 'MongoDB configuration file'
+    type: 'string'
+    default: '/etc/mongod.conf'
 
-# description: 'password Oracle DB'
-password: 'xvIA7zonxGM=1'
+  - name: mongodb_packages_used
+    description: 'List of mongodb packages used'
+    type: array
+    default: ['mongodb-org-tools-4.0.5-1.el7.x86_64',
+              'mongodb-org-server-4.0.5-1.el7.x86_64',
+              'mongodb-org-shell-4.0.5-1.el7.x86_64',
+              'mongodb-org-4.0.5-1.el7.x86_64',
+              'mongodb-org-mongos-4.0.5-1.el7.x86_64']
+  - name: user
+    description: 'User to log into the mongo database'
+    type: string
+    default: 'mongoadmin'
 
-# description: 'hostname Oracle DB'
-host: 'localhost'
+  - name: password
+    description: 'password to log into the mongo database'
+    type: string
+    default: 'mongoadmin'
 
-# description: 'service name Oracle DB'
-service: 'ORCLCDB'
+  - name: admin_db_users
+    description: 'List of authorized users of the admn database'
+    type: array
+    default: ["mongodb_admin"]
 
-# description: 'Location of sqlplus tool'
-sqlplus_bin: '/opt/oracle/product/12.2.0.1/dbhome_1/bin/sqlplus'
+  - name: config_db_users
+    description: 'List of authorized users of the admn database'
+    type: array
+    default: ["config_admin"]
 
-# description: 'Set to true if standard auditing is used'
-standard_auditing_used: true 
+  - name: myUserAdmin_allowed_role
+    description: 'List of authorized users of the admn database'
+    type: array
+    default: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
 
-# description: 'Set to true if unified auditing is used'
-unified_auditing_used: false
 
-# description: 'List of allowed database links'
-allowed_db_links: []
+  - name: mongoadmin_allowed_role
+    description: 'List of authorized users of the admn database'
+    type: array
+    default: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
 
-# description: 'List of allowed database admins'
-allowed_dbadmin_users: []
+  - name: appAdmin_allowed_role
+    description: 'List of authorized users of the admn database'
+    type: array
+    default: ['[ { "role" : "readWrite", "db" : "config" }, { "role" : "clusterAdmin", "db" : "admin" } ] }']
 
-# description: 'List of users allowed access to PUBLIC'
-users_allowed_access_to_public: []
-
-# description: 'List of users allowed the dba role'
-allowed_users_dba_role: []
-
-# description: 'List of users allowed the system tablespace'
-allowed_users_system_tablespace: []
-
-# description: 'List of application owners'
-allowed_application_owners: []
-
-# description: 'List of allowed unlocked oracle db accounts'
-allowed_unlocked_oracledb_accounts: []
-
-# description: 'List of users allowed access to the dictionary table'
-users_allowed_access_to_dictionary_table: []
-
-# description: 'List of users allowed admin privileges'
-allowed_users_with_admin_privs: []
-
-# description: 'List of users allowed audit access'
-allowed_audit_users: []
-
-# description: 'List of allowed dba object owners'
-allowed_dbaobject_owners: []
-
-# description: 'List of allowed oracle db components'
-allowed_oracledb_components: []
-
-# description: 'List of oracle db components allowed to be intregrated into the dbms'
-allowed_oracledb_components_integrated_into_dbms: []
-
-# description: "List of allowed oracle dba's"
-oracle_dbas: []
+  - name: accountAdmin01_allowed_role
+    description: 'List of authorized users of the admn database'
+    type: array
+    default: ['[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }
+']
 ```
 
 ## Running This Overlay
