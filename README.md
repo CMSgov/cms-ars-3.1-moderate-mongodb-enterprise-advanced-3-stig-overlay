@@ -36,24 +36,26 @@ admin_db_users: ["mongodb_admin"]
 config_db_users: ["config_admin"]
 
 # description: 'List of authorized users of the admn database'
-myUserAdmin_allowed_role: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
+myUserAdmin_allowed_role: ['[ { "role" : "userAdminAnyDatabase", 
+                                "db" : "admin" } ] }']
 
+# description: 'List of authorized users of the admn database'
+mongoadmin_allowed_role: ['[ { "role" : "userAdminAnyDatabase", 
+                               "db" : "admin" } ] }']
 
-  - name: mongoadmin_allowed_role
-    description: 'List of authorized users of the admn database'
-    type: array
-    default: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
+# description: 'List of authorized users of the admn database'
+appAdmin_allowed_role: ['[ { "role" : "readWrite", 
+                             "db" : "config" }, 
+                           { "role" : "clusterAdmin", 
+                             "db" : "admin" } ] }']
 
-  - name: appAdmin_allowed_role
-    description: 'List of authorized users of the admn database'
-    type: array
-    default: ['[ { "role" : "readWrite", "db" : "config" }, { "role" : "clusterAdmin", "db" : "admin" } ] }']
-
-  - name: accountAdmin01_allowed_role
-    description: 'List of authorized users of the admn database'
-    type: array
-    default: ['[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }
-']
+# description: 'List of authorized users of the admn database'
+accountAdmin01_allowed_role: ['[ { "role" : "clusterAdmin", 
+                                   "db" : "admin" }, 
+                                 { "role" : "readAnyDatabase", 
+                                   "db" : "admin" }, 
+                                 { "role" : "readWrite", 
+                                   "db" : "config" } ] }']
 ```
 
 ## Running This Overlay
