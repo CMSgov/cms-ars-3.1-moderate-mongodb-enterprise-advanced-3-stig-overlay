@@ -25,6 +25,21 @@ include_controls 'mongodb-enterprise-advanced-3-stig-baseline' do
     SRG-APP-000515-DB-000318'
   end
 
+  control 'V-81853' do
+    tag "cci": ['CCI-000338']
+    tag "nist": ['CM-5', 'Rev_4']
+  end
+
+  control 'V-81855' do
+    tag "cci": ['CCI-000338']
+    tag "nist": ['CM-5', 'Rev_4']
+  end
+
+  control 'V-81857' do
+    tag "cci": ['CCI-000338']
+    tag "nist": ['CM-5', 'Rev_4']
+  end
+  
   control 'V-81865' do
     title 'If DBMS authentication, using passwords, is employed, MongoDB must enforce 
     the CMS standards for password complexity and lifetime.'
@@ -99,6 +114,28 @@ include_controls 'mongodb-enterprise-advanced-3-stig-baseline' do
     authenticated identity to be meaningful to MongoDB and useful for authorization decisions.'
   end
 
+  control 'V-81879' do
+    tag "cci": ['CCI-001184']
+    tag "nist": ['SC-23', 'Rev_4']
+  end
+
+  control 'V-81881' do
+    impact 'none'
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security 
+         control is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'V-81897' do
+    impact 'none'
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security                                             
+         control is not applied to this system categorization in CMS ARS 3.1'
+  end
+
+  control 'V-81899' do
+    tag "cci": ['CCI-002235']
+    tag "nist" ['AC-6(10)', 'Rev_4']
+  end
+  
   control 'V-81907' do
     title 'MongoDB must provide a warning to appropriate support staff when allocated audit 
     record storage volume reaches 80% of maximum audit record storage capacity.'
@@ -123,7 +160,26 @@ include_controls 'mongodb-enterprise-advanced-3-stig-baseline' do
     volume holding the auditLog file utilization reaches 80%.'
   end
 
+  control 'V-81911' do
+    tag "cci": ['CCI-000338']
+    tag "nist": ['CM-5', 'Rev_4']
+  end
+
+  control 'V-81913' do
+    impact 'none'
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security 
+         control is not included in CMS ARS 3.1'
+  end
+
+  control 'V-81915' do
+    impact 'none'
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security                                  
+         control is not included in CMS ARS 3.1'
+  end
+  
   control 'V-81917' do
+    impact 'none'
+    
     title 'MongoDB must only accept end entity certificates issued by CMS PKI or CMS-approved 
     PKI Certification Authorities (CAs) for the establishment of all encrypted sessions.'
 
@@ -150,7 +206,10 @@ include_controls 'mongodb-enterprise-advanced-3-stig-baseline' do
     
     tag 'fix', 'Remove any certificate that was not issued by an approved CMS certificate 
     authority. Contact the organization\'s certificate issuer and request a new certificate 
-    that is issued by a valid CMS certificate authorities.' 
+    that is issued by a valid CMS certificate authorities.'
+
+    desc 'caveat', 'Not applicable for this CMS ARS 3.1 overlay, since the related security 
+    control is not included in CMS ARS 3.1'
   end
 
   control 'V-81923' do
