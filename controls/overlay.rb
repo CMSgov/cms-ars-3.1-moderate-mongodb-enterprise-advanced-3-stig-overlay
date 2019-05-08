@@ -133,7 +133,7 @@ include_controls 'mongodb-enterprise-advanced-3-stig-baseline' do
 
   control 'V-81899' do
     tag "cci": ['CCI-002235']
-    tag "nist" ['AC-6(10)', 'Rev_4']
+    tag "nist": ['AC-6(10)', 'Rev_4']
   end
   
   control 'V-81907' do
