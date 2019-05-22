@@ -13,43 +13,34 @@ The latest versions and installation options are available at the [InSpec](http:
 The following attributes must be configured in an attributes file for the profile to run correctly. More information about InSpec attributes can be found in the [InSpec Profile Documentation](https://www.inspec.io/docs/reference/profiles/).
 
 ```
-# description: 'MongoDB configuration file'
-mongod_conf: '/etc/mongod.conf'
+# description: MongoDB configuration file (e.g., '/etc/mongod.conf')
+mongod_conf: ''
 
-# description: 'List of mongodb packages used'
-mongodb_packages_used: ['mongodb-org-tools-4.0.5-1.el7.x86_64',
-              'mongodb-org-server-4.0.5-1.el7.x86_64',
-              'mongodb-org-shell-4.0.5-1.el7.x86_64',
-              'mongodb-org-4.0.5-1.el7.x86_64',
-              'mongodb-org-mongos-4.0.5-1.el7.x86_64']
+# description: List of mongodb packages used (e.g., ['mongodb-org-tools-4.0.5-1.el7.x86_64', 'mongodb-org-server-4.0.5-1.el7.x86_64', 'mongodb-org-shell-4.0.5-1.el7.x86_64', 'mongodb-org-4.0.5-1.el7.x86_64', 'mongodb-org-mongos-4.0.5-1.el7.x86_64'])
+mongodb_packages_used: []
   
-# description: 'User to log into the mongo database'
-user: 'mongoadmin'
+# description: User to log into the mongo database (e.g., 'mongoadmin')
+user: ''
 
-# description: 'password to log into the mongo database'
-password: 'mongoadmin'
+# description: Password to log into the mongo database (e.g., 'mongoadmin')
+password: ''
 
-# description: 'List of authorized users of the admn database'
-admin_db_users: ["mongodb_admin"]
+# description: List of authorized users of the admn database (e.g., ['mongodb_admin'])
+admin_db_users: ['']
 
-# description: 'List of authorized users of the admn database'
-config_db_users: ["config_admin"]
+# description: List of authorized users of the admn database (e.g., ['config_admin'])
+config_db_users: []
 
-# description: 'List of authorized users of the admn database'
-myUserAdmin_allowed_role: ['[ { "role" : "userAdminAnyDatabase", 
-                                "db" : "admin" } ] }']
+# description: List of authorized users of the admn database (e.g., ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }'])
+myUserAdmin_allowed_role: []
 
-# description: 'List of authorized users of the admn database'
-mongoadmin_allowed_role: ['[ { "role" : "userAdminAnyDatabase", 
-                               "db" : "admin" } ] }']
+# description: List of authorized users of the admn database (e.g., ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }'])
+mongoadmin_allowed_role: []
 
-# description: 'List of authorized users of the admn database'
-appAdmin_allowed_role: ['[ { "role" : "readWrite", 
-                             "db" : "config" }, 
-                           { "role" : "clusterAdmin", 
-                             "db" : "admin" } ] }']
+# description: List of authorized users of the admn database (e.g., ['[ { "role" : "readWrite", "db" : "config" }, { "role" : "clusterAdmin", "db" : "admin" } ] }'])
+appAdmin_allowed_role: []
 
-# description: 'List of authorized users of the admn database'
+# description: List of authorized users of the admn database (e.g., ['[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }'])
 accountAdmin01_allowed_role: ['[ { "role" : "clusterAdmin", 
                                    "db" : "admin" }, 
                                  { "role" : "readAnyDatabase", 
@@ -65,7 +56,7 @@ When the __"runner"__ host uses this profile overlay for the first time, follow 
 mkdir profiles
 cd profiles
 git clone https://github.com/mitre/mongodb-enterprise-advanced-3-stig-baseline.git
-git clone https://github.cms.gov/ispg/cms-ars-3.1-moderate-mongodb-enterprise-advanced-3-stig-overlay.git
+git clone https://github.cms.gov/ISPG/cms-ars-3.1-moderate-mongodb-enterprise-advanced-3-stig-overlay.git
 cd cms-ars-3.1-moderate-mongodb-enterprise-advanced-3-stig-overlay
 bundle install
 cd ..
@@ -91,7 +82,7 @@ The JSON results output file can be loaded into __[heimdall-lite](https://mitre.
 The JSON InSpec results file may also be loaded into a __[full heimdall server](https://github.com/mitre/heimdall)__, allowing for additional functionality such as to store and compare multiple profile runs.
 
 ## Getting Help
-To report a bug or feature request, please open an [issue](https://github.cms.gov/ispg/cms-ars-3.1-moderate-oracle-database-12c-stig-overlay/issues/new).
+To report a bug or feature request, please open an [issue](https://github.cms.gov/ISPG/cms-ars-3.1-moderate-mongodb-enterprise-advanced-3-stig-overlay/issues/new).
 
 ## Authors
 * Eugene Aronne
