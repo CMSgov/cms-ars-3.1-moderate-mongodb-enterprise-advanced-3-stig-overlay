@@ -26,7 +26,7 @@ user: ''
 password: ''
 
 # description: List of authorized users of the admn database (e.g., ['mongodb_admin'])
-admin_db_users: ['']
+admin_db_users: []
 
 # description: List of authorized users of the admn database (e.g., ['config_admin'])
 config_db_users: []
