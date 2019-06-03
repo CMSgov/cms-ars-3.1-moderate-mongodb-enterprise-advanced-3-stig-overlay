@@ -41,12 +41,7 @@ mongoadmin_allowed_role: []
 appAdmin_allowed_role: []
 
 # description: List of authorized users of the admn database (e.g., ['[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }'])
-accountAdmin01_allowed_role: ['[ { "role" : "clusterAdmin", 
-                                   "db" : "admin" }, 
-                                 { "role" : "readAnyDatabase", 
-                                   "db" : "admin" }, 
-                                 { "role" : "readWrite", 
-                                   "db" : "config" } ] }']
+accountAdmin01_allowed_role: []
 ```
 
 ## Running This Overlay
