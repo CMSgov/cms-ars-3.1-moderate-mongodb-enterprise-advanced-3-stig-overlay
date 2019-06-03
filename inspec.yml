@@ -18,51 +18,49 @@ attributes:
     default: '/etc/mongod.conf'
 
   - name: mongodb_packages_used
-    description: 'List of mongodb packages used'
+    description: 'List of mongodb packages used (e.g., [''mongodb-org-tools-4.0.5-1.el7.x86_64'',
+              ''mongodb-org-server-4.0.5-1.el7.x86_64'',''mongodb-org-shell-4.0.5-1.el7.x86_64'',
+              ''mongodb-org-4.0.5-1.el7.x86_64'',''mongodb-org-mongos-4.0.5-1.el7.x86_64''])'
     type: array
-    default: ['mongodb-org-tools-4.0.5-1.el7.x86_64',
-              'mongodb-org-server-4.0.5-1.el7.x86_64',
-              'mongodb-org-shell-4.0.5-1.el7.x86_64',
-              'mongodb-org-4.0.5-1.el7.x86_64',
-              'mongodb-org-mongos-4.0.5-1.el7.x86_64']
+    default: []
+    
   - name: user
-    description: 'User to log into the mongo database'
+    description: 'User to log into the mongo database (e.g., ''mongoadmin'')'
     type: string
-    default: 'mongoadmin'
+    default: ''
 
   - name: password
-    description: 'password to log into the mongo database'
+    description: 'password to log into the mongo database (e.g., ''mongoadmin'')'
     type: string
-    default: 'mongoadmin'
+    default: ''
 
   - name: admin_db_users
-    description: 'List of authorized users of the admn database'
+    description: 'List of authorized users of the admn database (e.g., ["mongodb_admin"])'
     type: array
-    default: ["mongodb_admin"]
+    default: []
 
   - name: config_db_users
-    description: 'List of authorized users of the admn database'
+    description: 'List of authorized users of the admn database (e.g., ["config_admin"])'
     type: array
-    default: ["config_admin"]
+    default: []
 
   - name: myUserAdmin_allowed_role
-    description: 'List of authorized users of the admn database'
+    description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }''])'
     type: array
-    default: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
+    default: []
 
   - name: mongoadmin_allowed_role
-    description: 'List of authorized users of the admn database'
+    description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }''])'
     type: array
-    default: ['[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }']
+    default: []
 
   - name: appAdmin_allowed_role
-    description: 'List of authorized users of the admn database'
+    description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "readWrite", "db" : "config" }, { "role" : "clusterAdmin", "db" : "admin" } ] }''])'
     type: array
-    default: ['[ { "role" : "readWrite", "db" : "config" }, { "role" : "clusterAdmin", "db" : "admin" } ] }']
+    default: []
 
   - name: accountAdmin01_allowed_role
-    description: 'List of authorized users of the admn database'
+    description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }
+''])'
     type: array
-    default: ['[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }
-']
-
+    default: []
