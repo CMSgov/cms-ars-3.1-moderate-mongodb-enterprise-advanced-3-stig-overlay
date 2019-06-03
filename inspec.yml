@@ -13,9 +13,9 @@ depends:
 
 attributes:
   - name: mongod_conf
-    description: 'MongoDB configuration file'
+    description: 'MongoDB configuration file (e.g., ''/etc/mongod.conf'')'
     type: 'string'
-    default: '/etc/mongod.conf'
+    default: ''
 
   - name: mongodb_packages_used
     description: 'List of mongodb packages used (e.g., [''mongodb-org-tools-4.0.5-1.el7.x86_64'',
