@@ -1,66 +1,78 @@
 name: cms-ars-3.1-moderate-mongodb-enterprise-advanced-3-stig-overlay
-title: .
+title: cms-ars-3.1-moderate-mongodb-enterprise-advanced-3-stig-overlay
 maintainer: CMS InSpec Dev Team 
-copyright: .
+copyright: 
 copyright_email: 
 license: Apache-2.0
-summary: .
-version: 0.1.0
+summary: "CMS ARS 3.1 Moderate Overlay InSpec Validation Profile for MongoDB Enterprise Advanced 3 STIG"
+version: 0.1.1
+inspec_version: ">= 4.0"
 
 depends:
 - name: mongodb-enterprise-advanced-3-stig-baseline
-  path: ../mongodb-enterprise-advanced-3-stig-baseline
+  url: https://github.com/mitre/mongodb-enterprise-advanced-3-stig-baseline/archive/master.tar.gz
 
-attributes:
+inputs:
   - name: mongod_conf
     description: 'MongoDB configuration file (e.g., ''/etc/mongod.conf'')'
     type: 'string'
-    default: ''
+    value: ''
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: mongodb_packages_used
-    description: 'List of mongodb packages used (e.g., [''mongodb-org-tools-4.0.5-1.el7.x86_64'',
-              ''mongodb-org-server-4.0.5-1.el7.x86_64'',''mongodb-org-shell-4.0.5-1.el7.x86_64'',
-              ''mongodb-org-4.0.5-1.el7.x86_64'',''mongodb-org-mongos-4.0.5-1.el7.x86_64''])'
+    description: 'List of mongodb packages used (e.g., [''mongodb-org-tools-4.0.5-1.el7.x86_64'',''mongodb-org-server-4.0.5-1.el7.x86_64'',''mongodb-org-shell-4.0.5-1.el7.x86_64'',''mongodb-org-4.0.5-1.el7.x86_64'',''mongodb-org-mongos-4.0.5-1.el7.x86_64''])'
     type: array
-    default: []
+    value: []
+    profile: mongodb-enterprise-advanced-3-stig-baseline
     
   - name: user
     description: 'User to log into the mongo database (e.g., ''mongoadmin'')'
     type: string
-    default: ''
+    value: ''
+    sensitive: true
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: password
     description: 'password to log into the mongo database (e.g., ''mongoadmin'')'
     type: string
-    default: ''
+    value: ''
+    sensitive: true
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: admin_db_users
     description: 'List of authorized users of the admn database (e.g., ["mongodb_admin"])'
     type: array
-    default: []
+    value: []
+    sensitive: true
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: config_db_users
     description: 'List of authorized users of the admn database (e.g., ["config_admin"])'
     type: array
-    default: []
+    value: []
+    sensitive: true
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: myUserAdmin_allowed_role
     description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }''])'
     type: array
-    default: []
+    value: []
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: mongoadmin_allowed_role
     description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "userAdminAnyDatabase", "db" : "admin" } ] }''])'
     type: array
-    default: []
+    value: []
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: appAdmin_allowed_role
     description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "readWrite", "db" : "config" }, { "role" : "clusterAdmin", "db" : "admin" } ] }''])'
     type: array
-    default: []
+    value: []
+    profile: mongodb-enterprise-advanced-3-stig-baseline
 
   - name: accountAdmin01_allowed_role
-    description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }
-''])'
+    description: 'List of authorized users of the admn database (e.g., [''[ { "role" : "clusterAdmin", "db" : "admin" }, { "role" : "readAnyDatabase", "db" : "admin" }, { "role" : "readWrite", "db" : "config" } ] }''])'
     type: array
-    default: []
+    value: []
+    profile: mongodb-enterprise-advanced-3-stig-baseline
